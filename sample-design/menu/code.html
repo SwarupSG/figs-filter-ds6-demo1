@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fig &amp; Filter — Menu</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fig-purple': '#4A2C4D',
+        'warm-amber': '#D9A441',
+        'warm-offwhite': '#FAF6F0',
+        'near-black': '#221E1F',
+        'accent': '#D9A441',
+        'on-accent': '#221E1F',
+        'light-primary': '#4A2C4D',
+        'light-on-primary': '#FAF6F0',
+        'light-primary-container': '#5C3760',
+        'light-on-primary-container': '#FAF6F0',
+        'light-surface': '#FAF6F0',
+        'light-on-surface': '#221E1F',
+        'light-surface-container': '#F2ECE2',
+        'light-on-surface-container': '#221E1F',
+        'light-surface-container-high': '#E8E0D2',
+        'light-on-surface-container-high': '#221E1F',
+        'light-outline': '#6E6359',
+        'light-outline-variant': '#D6CBBF',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '20px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Cormorant Garamond"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.25px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.5px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '250ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Lato:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-md mx-auto bg-light-surface border-x border-light-outline-variant" data-stitch-vh="min-h-[884px]===min-h-screen">
+    
+    <!-- Top Utility Bar: Address and opening hours visible without scrolling -->
+    <div class="bg-light-surface-container border-b border-light-outline-variant px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">location_on</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">8 Chalk Lane</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">schedule</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">Tue–Sun 7:30am–5:00pm</span>
+      </div>
+    </div>
+
+    <!-- Header & Navigation (Consistent Shell) -->
+    <header class="sticky top-0 z-30 bg-light-surface border-b border-light-outline-variant px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="../home/Home.html" class="flex flex-col">
+          <span class="font-headline text-headline-lg-mobile text-fig-purple font-bold tracking-tight">Fig &amp; Filter</span>
+        </a>
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="p-2 rounded text-fig-purple hover:bg-light-surface-container transition-colors">
+          <span id="menu-icon" class="material-symbols-outlined text-headline-lg">menu</span>
+        </button>
+      </div>
+
+      <!-- Navigation Drawer / Links -->
+      <nav id="mobile-nav" class="hidden pt-3 pb-2 border-t border-light-outline-variant mt-2" aria-label="Main menu">
+        <ul data-component-id="list-interactive" data-component-type="list" data-component-variant="interactive" class="flex flex-col gap-2">
+          <li>
+            <a href="../home/Home.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="Menu.html" aria-current="page" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-fig-purple bg-light-surface-container font-semibold">
+              <span data-design-text-token="label-lg">Menu</span>
+              <span class="material-symbols-outlined text-body-lg text-accent" aria-hidden="true">arrow_forward</span>
+            </a>
+          </li>
+          <li>
+            <a href="../catering/Catering.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Catering</span>
+            </a>
+          </li>
+          <li>
+            <a href="../about/About.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="../visit/Visit.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Visit</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content: Job - let a visitor find what they would order in under a minute -->
+    <main class="flex-1 p-6 flex flex-col gap-6">
+      <div>
+        <h1 class="font-headline text-headline-lg-mobile text-fig-purple mb-1">Our Menu</h1>
+        <p class="font-body text-body-md text-light-on-surface">
+          Roasted behind the counter and baked fresh on site every morning.
+        </p>
+      </div>
+
+      <!-- One photograph as specified in the brief -->
+      <div class="rounded-lg overflow-hidden border border-light-outline-variant">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrD-B0f6jQVaEpFcgJv7hwJN1EO-3_v0POAxqKJje2SrBR65Ss227A7ULeOjDSVispsZ_FqjZO4UikT0o7t9iWacHXfhaBBt2KKtb1fcYq-L1LhB19wvvyNiPQXUaMH1fT5ooLAIaiOi8ketDP2t_80XHt2HIGj4Ocd-_FFplJc9OiQmHDVIuwOBlsmFuNhKRNcSywm7VK54CQ5Vko1Qcj3HxmKi7v7rPScYnhFIie07aqxjpxD2MIoKDZcHFQ" alt="Freshly baked butter croissant on ceramic plate alongside a flat white with latte art" class="w-full h-48 object-cover">
+      </div>
+
+      <!-- Dietary Key -->
+      <div class="flex items-center gap-2 p-2.5 rounded bg-light-surface-container border border-light-outline-variant font-label text-label-sm text-light-on-surface">
+        <span class="font-semibold text-fig-purple">Dietary:</span>
+        <span class="px-1.5 py-0.5 rounded bg-light-surface-container-high text-fig-purple font-bold">V</span> Vegetarian
+        <span class="px-1.5 py-0.5 rounded bg-light-surface-container-high text-fig-purple font-bold">VG</span> Vegan
+        <span class="px-1.5 py-0.5 rounded bg-light-surface-container-high text-fig-purple font-bold">GF</span> Gluten-Free
+      </div>
+
+      <!-- Four Menu Groups in single column on mobile, max 2 columns on desktop -->
+      <div class="flex flex-col gap-6">
+        
+        <!-- Group 1: Coffee (espresso $3.50 to iced latte $6.00) -->
+        <section>
+          <div class="flex items-baseline justify-between border-b border-fig-purple/40 pb-2 mb-3">
+            <h2 class="font-headline text-headline-md text-fig-purple">Coffee</h2>
+            <span class="font-body text-label-sm text-light-on-surface">House roasted</span>
+          </div>
+          <ul class="divide-y divide-light-outline-variant">
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Espresso</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Double shot single origin or seasonal blend</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$3.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Long Black</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Hot water topped with espresso</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$4.20</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Flat White / Latte / Cappuccino</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Steamed whole milk or organic oat milk</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$4.80</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Batch Brew Filter</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Rotating single origin filter of the week</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$5.00</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Iced Latte</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Chilled double shot over cold milk and clear ice</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$6.00</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Group 2: Not Coffee (teas, chai, juices, $4.50–$6.00) -->
+        <section>
+          <div class="flex items-baseline justify-between border-b border-fig-purple/40 pb-2 mb-3">
+            <h2 class="font-headline text-headline-md text-fig-purple">Not Coffee</h2>
+            <span class="font-body text-label-sm text-light-on-surface">Teas, chai &amp; juices</span>
+          </div>
+          <ul class="divide-y divide-light-outline-variant">
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Loose Leaf Teas</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">English Breakfast, Earl Grey, Sencha Green, Peppermint</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$4.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">House Sticky Chai</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Whole spices brewed with raw honey and milk</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$5.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Pressed Valencia Orange Juice</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Cold-pressed pure orange juice, unpasteurised</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$6.00</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Green Juice</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG, GF</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Apple, cucumber, celery, spinach, ginger</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$6.00</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Group 3: All-Day Kitchen (toast $8.00 to big breakfast $22.00) -->
+        <section>
+          <div class="flex items-baseline justify-between border-b border-fig-purple/40 pb-2 mb-3">
+            <h2 class="font-headline text-headline-md text-fig-purple">All-Day Kitchen</h2>
+            <span class="font-body text-label-sm text-light-on-surface">Made to order</span>
+          </div>
+          <ul class="divide-y divide-light-outline-variant">
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">House Sourdough Toast</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V, VG opt</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Cultured butter, fig jam, or local raw honey</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$8.00</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Courtyard Eggs on Toast</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Two poached or scrambled pasture eggs on toasted rye</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$14.00</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Avocado &amp; Pickled Fig Toast</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">VG</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Smashed avocado, courtyard pickled fig, dukkah</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$17.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">The Big Breakfast</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">GF opt</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Pasture eggs, smoked bacon, roasted mushrooms, house beans, sourdough</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$22.00</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Group 4: Bakery (croissant $4.50 to banana bread $6.50) -->
+        <section>
+          <div class="flex items-baseline justify-between border-b border-fig-purple/40 pb-2 mb-3">
+            <h2 class="font-headline text-headline-md text-fig-purple">Bakery</h2>
+            <span class="font-body text-label-sm text-light-on-surface">Baked on site daily</span>
+          </div>
+          <ul class="divide-y divide-light-outline-variant">
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Butter Croissant</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Traditional laminated French butter pastry</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$4.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Pain au Chocolat</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Dark chocolate batons folded into laminated dough</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$5.50</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Almond Frangipane Tart</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Flaked almonds with sweet fig preserve</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$6.00</span>
+            </li>
+            <li class="py-2.5 flex items-baseline justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span data-design-text-token="body-lg" class="font-body text-body-lg font-semibold text-fig-purple">Toasted Banana Bread</span>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-light-surface-container-high text-fig-purple">V, GF opt</span>
+                </div>
+                <span data-design-text-token="body-md" class="font-body text-body-md text-light-outline block mt-0.5">Served warm with espresso butter and sea salt</span>
+              </div>
+              <span class="font-label text-label-lg tabular-nums text-fig-purple font-semibold">$6.50</span>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- Exactly one primary call to action: "Visit us at 8 Chalk Lane" -->
+      <div class="pt-4 border-t border-light-outline-variant">
+        <a href="../visit/Visit.html" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center w-full px-6 py-3.5 rounded bg-fig-purple text-light-on-primary font-label text-label-lg border border-light-outline/40 shadow-sm transition-colors duration-state-change hover:bg-light-primary-container focus:outline-none focus:ring-2 focus:ring-accent">
+          <span data-design-text-token="label-lg">Visit us at 8 Chalk Lane</span>
+        </a>
+      </div>
+    </main>
+
+    <!-- Global Footer on every page: café name, opening hours, address (8 Chalk Lane), email, and an "Order catering" link -->
+    <footer class="bg-fig-purple text-light-on-primary border-t border-light-outline-variant px-6 py-8 mt-6">
+      <div class="flex flex-col gap-6">
+        <div>
+          <span class="font-headline text-headline-md text-light-on-primary block font-bold">Fig &amp; Filter</span>
+          <p class="font-body text-body-md text-light-on-primary/90 mt-1">Roasted here. Baked here. Poured for you.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 text-body-md">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Opening Hours</span>
+              <span class="text-light-on-primary/90 block">Tuesday to Sunday: 7:30am – 5:00pm</span>
+              <span class="text-light-on-primary/75 text-label-sm block">Monday: Closed</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">location_on</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Address</span>
+              <span class="text-light-on-primary/90 block">8 Chalk Lane, corner of Weaver Street</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">mail</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Email</span>
+              <a href="mailto:hello@figandfilter.com" class="text-light-on-primary/90 hover:underline">hello@figandfilter.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-light-on-primary/20 flex items-center justify-between">
+          <a href="../catering/Catering.html" class="font-label text-label-lg text-accent underline decoration-accent underline-offset-4 hover:text-light-on-primary transition-colors">
+            Order catering →
+          </a>
+          <span class="font-body text-label-sm text-light-on-primary/75">Open 2 years</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    const icon = document.getElementById('menu-icon');
+    if (toggleBtn && nav && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = nav.classList.toggle('hidden');
+        const expanded = !isHidden;
+        toggleBtn.setAttribute('aria-expanded', String(expanded));
+        icon.textContent = expanded ? 'close' : 'menu';
+      });
+    }
+  </script>
+
+
+</body></html>

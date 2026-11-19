@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fig &amp; Filter — About</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fig-purple': '#4A2C4D',
+        'warm-amber': '#D9A441',
+        'warm-offwhite': '#FAF6F0',
+        'near-black': '#221E1F',
+        'accent': '#D9A441',
+        'on-accent': '#221E1F',
+        'light-primary': '#4A2C4D',
+        'light-on-primary': '#FAF6F0',
+        'light-primary-container': '#5C3760',
+        'light-on-primary-container': '#FAF6F0',
+        'light-surface': '#FAF6F0',
+        'light-on-surface': '#221E1F',
+        'light-surface-container': '#F2ECE2',
+        'light-on-surface-container': '#221E1F',
+        'light-surface-container-high': '#E8E0D2',
+        'light-on-surface-container-high': '#221E1F',
+        'light-outline': '#6E6359',
+        'light-outline-variant': '#D6CBBF',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '20px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Cormorant Garamond"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.25px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.5px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '250ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Lato:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-md mx-auto bg-light-surface border-x border-light-outline-variant" data-stitch-vh="min-h-[884px]===min-h-screen">
+    
+    <!-- Top Utility Bar: Immediate address and opening hours visible without scrolling -->
+    <div class="bg-light-surface-container border-b border-light-outline-variant px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">location_on</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">8 Chalk Lane</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">schedule</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">Tue–Sun 7:30am–5:00pm</span>
+      </div>
+    </div>
+
+    <!-- Header & Navigation (Consistent Shell) -->
+    <header class="sticky top-0 z-30 bg-light-surface border-b border-light-outline-variant px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="../home/Home.html" class="flex flex-col">
+          <span class="font-headline text-headline-lg-mobile text-fig-purple font-bold tracking-tight">Fig &amp; Filter</span>
+        </a>
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="p-2 rounded text-fig-purple hover:bg-light-surface-container transition-colors">
+          <span id="menu-icon" class="material-symbols-outlined text-headline-lg">menu</span>
+        </button>
+      </div>
+
+      <!-- Navigation Drawer / Links -->
+      <nav id="mobile-nav" class="hidden pt-3 pb-2 border-t border-light-outline-variant mt-2" aria-label="Main menu">
+        <ul data-component-id="list-interactive" data-component-type="list" data-component-variant="interactive" class="flex flex-col gap-2">
+          <li>
+            <a href="../home/Home.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="../menu/Menu.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="../catering/Catering.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Catering</span>
+            </a>
+          </li>
+          <li>
+            <a href="About.html" aria-current="page" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-fig-purple bg-light-surface-container font-semibold">
+              <span data-design-text-token="label-lg">About</span>
+              <span class="material-symbols-outlined text-body-lg text-accent" aria-hidden="true">arrow_forward</span>
+            </a>
+          </li>
+          <li>
+            <a href="../visit/Visit.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Visit</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content: Job - make the café feel like people, not a business -->
+    <main class="flex-1 p-6 flex flex-col gap-6">
+      <div>
+        <h1 class="font-headline text-headline-lg-mobile text-fig-purple mb-1">Our Story</h1>
+        <p class="font-body text-body-md text-light-on-surface">
+          Two years on Chalk Lane, grounded in honest craft and good company.
+        </p>
+      </div>
+
+      <!-- Founding Story -->
+      <section class="p-5 rounded-lg bg-light-surface-container border border-light-outline-variant">
+        <h2 class="font-title text-title-lg text-fig-purple mb-3">The Old Picture-Framing Shop</h2>
+        <div class="font-body text-body-md text-light-on-surface flex flex-col gap-3">
+          <p>
+            Two years ago, we took over what had been a quiet picture-framing workshop for thirty years on the corner of Weaver Street and Chalk Lane. The space still had timber benches and plaster dust behind the baseboards.
+          </p>
+          <p>
+            We named the place after the seventy-year-old fig tree growing through the flagstones in the rear courtyard. It drops fresh figs every late summer and shades the long bench every morning. We kept the solid timber floors, brought in a drum roaster, built an open bakery counter, and opened our doors to the neighbourhood.
+          </p>
+        </div>
+      </section>
+
+      <!-- Two Founder Profiles with portrait photographs -->
+      <section class="flex flex-col gap-4">
+        <div>
+          <h2 class="font-headline text-headline-md text-fig-purple">The People Behind the Counter</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          
+          <!-- Founder 1: Mara -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="p-5 rounded-lg bg-light-surface-container border border-light-outline-variant">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCgPVLDreAAPsXbkeDTmKTOppLf47KifOyVe-8KVsyjdjndEhbFl4CgzxwAffcCs4KEEek_ILBTbmXj6IovZzJO5lcoQY9bcVvugCx1t5g2rt74O7ZOfoBfSg_NHoUVcrX_s74v-H6IWEMd34xFDjsUj_DSsSku-t16UWv3VklvQwj-XhRM7N4JNgVIPK5Q3DJcdceQmn_3_5YWmVy51osz1w_ra78iNGzwA-gz0ddQ_-6pyGxO" alt="Portrait of Mara, baker and kitchen founder at Fig and Filter" class="w-20 h-20 rounded-full object-cover border-2 border-fig-purple/30 shrink-0">
+              <div>
+                <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple">Mara</h3>
+                <span class="font-body text-label-sm text-fig-purple font-semibold block">Kitchen &amp; Bakery</span>
+              </div>
+            </div>
+            <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">
+              Mara runs the kitchen and bakes from 5:40 every single morning. She mixes sourdough with a wild levain started five years ago, laminates butter pastries in batches of twenty-four, and pulls hot loaves from the deck ovens just as the front doors unlock. If there is flour on her sleeves, it means everything went according to plan.
+            </p>
+          </article>
+
+          <!-- Founder 2: Dev -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="p-5 rounded-lg bg-light-surface-container border border-light-outline-variant">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrBLqdNMONu4r-nglauDQLuL5SP7rUXngCkKypoe8nx_72h5qs31CNGPOJel43owNs_JTrFntx76PrBSmbnwXwK-69AvUuIxrKiqEqEQmvaarxkYPcVc1jCq11ymOlNPbF3305BHgiko5QdPdO426U3uEeV9CUlql_NB8ZIgHSdt-lfPpyz0w1g7rz3rQVZnfkQB1nkom0LZJ47qLxIK3UgdT_bFL3AkkXKlj3I2yKaI2hIywuU" alt="Portrait of Dev, coffee roaster and founder at Fig and Filter" class="w-20 h-20 rounded-full object-cover border-2 border-fig-purple/30 shrink-0">
+              <div>
+                <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple">Dev</h3>
+                <span class="font-body text-label-sm text-fig-purple font-semibold block">Coffee Roaster</span>
+              </div>
+            </div>
+            <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">
+              Dev roasts twice a week on the cast-iron machine situated right behind the espresso counter. He sources small-holder beans from high-altitude farms, dials in roast curves batch by batch, and insists on tasting every morning pull before we serve a single cup.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Roasting Schedule Note -->
+      <section class="p-5 rounded-lg bg-light-surface-container border border-light-outline-variant">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-fig-purple text-headline-md shrink-0 mt-0.5" aria-hidden="true">coffee</span>
+          <div>
+            <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple mb-1">Our Roasting Schedule</h3>
+            <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">
+              We roast on <strong>Tuesday mornings</strong> and <strong>Friday afternoons</strong>. If you visit while the drum is spinning, you&#39;ll catch the sweet scent of caramelising coffee beans drifting into the lane. Fresh retail bags of whole bean and custom grinds are restocked right after cooling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exactly one primary call to action on the page: "Come meet us at the café" -->
+      <div>
+        <a href="../visit/Visit.html" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center w-full px-6 py-3.5 rounded bg-fig-purple text-light-on-primary font-label text-label-lg border border-light-outline/40 shadow-sm transition-colors duration-state-change hover:bg-light-primary-container focus:outline-none focus:ring-2 focus:ring-accent">
+          <span data-design-text-token="label-lg">Come meet us at the café</span>
+        </a>
+      </div>
+    </main>
+
+    <!-- Global Footer on every page: café name, opening hours, address (8 Chalk Lane), email, and an "Order catering" link -->
+    <footer class="bg-fig-purple text-light-on-primary border-t border-light-outline-variant px-6 py-8 mt-6">
+      <div class="flex flex-col gap-6">
+        <div>
+          <span class="font-headline text-headline-md text-light-on-primary block font-bold">Fig &amp; Filter</span>
+          <p class="font-body text-body-md text-light-on-primary/90 mt-1">Roasted here. Baked here. Poured for you.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 text-body-md">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Opening Hours</span>
+              <span class="text-light-on-primary/90 block">Tuesday to Sunday: 7:30am – 5:00pm</span>
+              <span class="text-light-on-primary/75 text-label-sm block">Monday: Closed</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">location_on</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Address</span>
+              <span class="text-light-on-primary/90 block">8 Chalk Lane, corner of Weaver Street</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">mail</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Email</span>
+              <a href="mailto:hello@figandfilter.com" class="text-light-on-primary/90 hover:underline">hello@figandfilter.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-light-on-primary/20 flex items-center justify-between">
+          <a href="../catering/Catering.html" class="font-label text-label-lg text-accent underline decoration-accent underline-offset-4 hover:text-light-on-primary transition-colors">
+            Order catering →
+          </a>
+          <span class="font-body text-label-sm text-light-on-primary/75">Open 2 years</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    const icon = document.getElementById('menu-icon');
+    if (toggleBtn && nav && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = nav.classList.toggle('hidden');
+        const expanded = !isHidden;
+        toggleBtn.setAttribute('aria-expanded', String(expanded));
+        icon.textContent = expanded ? 'close' : 'menu';
+      });
+    }
+  </script>
+
+
+</body></html>

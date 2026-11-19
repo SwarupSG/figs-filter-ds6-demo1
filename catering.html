@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4A2C4D">
+  <title>Fig &amp; Filter — Catering</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Fig &amp; Filter</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span class="nav-toggle-box" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="catering.html" aria-current="page">Catering</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-intro" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Catering</h1>
+        <p class="lede">We cater meetings, workshops, and office mornings within a 5km radius. Everything is made in our kitchen the same morning it's delivered. Order by 2:00pm the day before; for the Full Spread, give us two working days.</p>
+      </div>
+    </section>
+
+    <figure class="container photo-band photo-3-2">
+      <img src="images/catering-spread.jpg" alt="A catering spread of filled croissants and canapés on serving stands" width="1200" height="800">
+    </figure>
+
+    <section class="section" aria-labelledby="packages-title">
+      <div class="container">
+        <h2 id="packages-title">Packages</h2>
+        <div class="package-grid">
+          <article class="package">
+            <h3>The Coffee Run — $9 per person</h3>
+            <p>For meetings that just need good coffee.</p>
+            <ul>
+              <li>A 2.5L flask of batch-brew filter per 8 people</li>
+              <li>Oat and dairy milk, cups, and sugar included</li>
+              <li>Add a flask of chai for $12</li>
+            </ul>
+          </article>
+
+          <article class="package">
+            <h3>The Morning Tea — $16 per person</h3>
+            <p>The one most offices reorder.</p>
+            <ul>
+              <li>Batch-brew filter as above</li>
+              <li>Two bakery items per person (croissants, scones, cookie of the day)</li>
+              <li>Seasonal fruit platter</li>
+              <li>Minimum 6 people</li>
+            </ul>
+          </article>
+
+          <article class="package">
+            <h3>The Full Spread — $28 per person</h3>
+            <p>For workshops, planning days, and celebrations.</p>
+            <ul>
+              <li>Everything in The Morning Tea</li>
+              <li>Sandwich platter (halloumi and roast vegetable, chicken schnitzel)</li>
+              <li>Fresh orange juice and house lemonade</li>
+              <li>Minimum 10 people, two working days' notice</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="order-title">
+      <div class="container">
+        <h2 id="order-title">How to order</h2>
+        <p>Email <strong>catering@figandfilter.example</strong> with your date, headcount, delivery address, and any dietary needs. We confirm within one working day. Delivery is free within 5km; we drop off, set up, and collect the kit the same afternoon.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-row">
+        <a class="btn btn-primary" href="mailto:catering@figandfilter.example">Order catering</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Fig &amp; Filter</p>
+        <p class="footer-tagline">Roasted here. Baked here. Poured for you.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Address</h2>
+        <p>8 Chalk Lane (corner of Weaver Street)</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Contact</h2>
+        <p><a href="mailto:hello@figandfilter.example">hello@figandfilter.example</a></p>
+        <p>Catering enquiries: <a href="mailto:catering@figandfilter.example">catering@figandfilter.example</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+        nav.classList.toggle('is-open', open);
+      }
+
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

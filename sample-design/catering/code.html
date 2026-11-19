@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fig &amp; Filter — Catering</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fig-purple': '#4A2C4D',
+        'warm-amber': '#D9A441',
+        'warm-offwhite': '#FAF6F0',
+        'near-black': '#221E1F',
+        'accent': '#D9A441',
+        'on-accent': '#221E1F',
+        'light-primary': '#4A2C4D',
+        'light-on-primary': '#FAF6F0',
+        'light-primary-container': '#5C3760',
+        'light-on-primary-container': '#FAF6F0',
+        'light-surface': '#FAF6F0',
+        'light-on-surface': '#221E1F',
+        'light-surface-container': '#F2ECE2',
+        'light-on-surface-container': '#221E1F',
+        'light-surface-container-high': '#E8E0D2',
+        'light-on-surface-container-high': '#221E1F',
+        'light-outline': '#6E6359',
+        'light-outline-variant': '#D6CBBF',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '20px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Cormorant Garamond"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.25px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.5px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '250ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Lato:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-md mx-auto bg-light-surface border-x border-light-outline-variant" data-stitch-vh="min-h-[884px]===min-h-screen">
+    
+    <!-- Top Utility Bar: Immediate address and opening hours visible without scrolling -->
+    <div class="bg-light-surface-container border-b border-light-outline-variant px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">location_on</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">8 Chalk Lane</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-light-on-surface">
+        <span class="material-symbols-outlined text-body-lg text-fig-purple" aria-hidden="true">schedule</span>
+        <span data-design-text-token="body-md" class="font-body text-body-md font-normal">Tue–Sun 7:30am–5:00pm</span>
+      </div>
+    </div>
+
+    <!-- Header & Navigation (Consistent Shell) -->
+    <header class="sticky top-0 z-30 bg-light-surface border-b border-light-outline-variant px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="../home/Home.html" class="flex flex-col">
+          <span class="font-headline text-headline-lg-mobile text-fig-purple font-bold tracking-tight">Fig &amp; Filter</span>
+        </a>
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="p-2 rounded text-fig-purple hover:bg-light-surface-container transition-colors">
+          <span id="menu-icon" class="material-symbols-outlined text-headline-lg">menu</span>
+        </button>
+      </div>
+
+      <!-- Navigation Drawer / Links -->
+      <nav id="mobile-nav" class="hidden pt-3 pb-2 border-t border-light-outline-variant mt-2" aria-label="Main menu">
+        <ul data-component-id="list-interactive" data-component-type="list" data-component-variant="interactive" class="flex flex-col gap-2">
+          <li>
+            <a href="../home/Home.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="../menu/Menu.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="Catering.html" aria-current="page" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-fig-purple bg-light-surface-container font-semibold">
+              <span data-design-text-token="label-lg">Catering</span>
+              <span class="material-symbols-outlined text-body-lg text-accent" aria-hidden="true">arrow_forward</span>
+            </a>
+          </li>
+          <li>
+            <a href="../about/About.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="../visit/Visit.html" class="flex items-center justify-between py-1.5 px-2 rounded font-label text-label-lg text-light-on-surface hover:text-fig-purple hover:bg-light-surface-container transition-colors">
+              <span data-design-text-token="label-lg">Visit</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content: Job - get an office manager to send a catering enquiry email -->
+    <main class="flex-1 p-6 flex flex-col gap-6">
+      <div>
+        <h1 class="font-headline text-headline-lg-mobile text-fig-purple mb-1">Office Catering</h1>
+        <p class="font-body text-body-md text-light-on-surface">
+          Roasted here, baked on site this morning, delivered warm to your workplace.
+        </p>
+      </div>
+
+      <!-- Ordering Process Notice: order by 2pm day before, free delivery within 5km -->
+      <section class="p-4 rounded-lg bg-light-surface-container border border-light-outline-variant">
+        <h2 class="font-title text-title-lg text-fig-purple mb-2 flex items-center gap-2">
+          <span class="material-symbols-outlined text-accent text-headline-md" aria-hidden="true">local_shipping</span>
+          The Ordering Process
+        </h2>
+        <ul class="flex flex-col gap-2 text-body-md text-light-on-surface">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-body-lg text-fig-purple shrink-0 mt-0.5" aria-hidden="true">alarm</span>
+            <span><strong>Order by 2:00pm the day before:</strong> gives Mara time to proof dough and Dev time to roast fresh beans.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-body-lg text-fig-purple shrink-0 mt-0.5" aria-hidden="true">distance</span>
+            <span><strong>Free delivery within 5km:</strong> delivered hot and set up in your office kitchen or boardroom, ready to pour.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Three Packages comparable at a glance, stacked on mobile -->
+      <div class="flex flex-col gap-5">
+        
+        <!-- Package 1: The Coffee Run $9 per person -->
+        <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="bg-light-surface-container border border-light-outline-variant rounded-lg p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-baseline justify-between gap-2 border-b border-light-outline-variant pb-3 mb-3">
+              <div>
+                <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple font-bold">The Coffee Run</h3>
+                <span class="font-body text-label-sm text-light-outline">Ideal for morning standups</span>
+              </div>
+              <div class="text-right">
+                <span class="font-headline text-headline-md text-fig-purple font-bold tabular-nums">$9</span>
+                <span class="font-body text-label-sm text-light-outline block">/ person</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-body-md text-light-on-surface mb-3">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Insulated thermal urn of single-origin batch filter</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Full dairy milk and house oat milk carafes</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Freshly baked bite-sized morning cookies (2pp)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Compostable cups, lids, stirrers, and raw sugar</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-light-outline-variant text-label-sm text-light-outline">
+            Min. 8 people
+          </div>
+        </article>
+
+        <!-- Package 2: The Morning Tea $16 per person -->
+        <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="bg-light-surface-container border-2 border-fig-purple/40 rounded-lg p-5 flex flex-col justify-between relative shadow-sm">
+          <div>
+            <div class="flex items-baseline justify-between gap-2 border-b border-light-outline-variant pb-3 mb-3">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple font-bold">The Morning Tea</h3>
+                  <span class="px-1.5 py-0.5 rounded text-label-sm font-bold bg-fig-purple text-light-on-primary uppercase">Popular</span>
+                </div>
+                <span class="font-body text-label-sm text-light-outline">Client meetings &amp; team events</span>
+              </div>
+              <div class="text-right">
+                <span class="font-headline text-headline-md text-fig-purple font-bold tabular-nums">$16</span>
+                <span class="font-body text-label-sm text-light-outline block">/ person</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-body-md text-light-on-surface mb-3">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Batch filter coffee urn &amp; selection of loose teas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Mara&#39;s freshly baked morning butter croissants</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Toasted banana bread with espresso butter</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Seasonal fruit platter with courtyard fig preserve</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-light-outline-variant text-label-sm text-light-outline">
+            Min. 6 people
+          </div>
+        </article>
+
+        <!-- Package 3: The Full Spread $28 per person -->
+        <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="bg-light-surface-container border border-light-outline-variant rounded-lg p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-baseline justify-between gap-2 border-b border-light-outline-variant pb-3 mb-3">
+              <div>
+                <h3 data-design-text-token="title-lg" class="font-title text-title-lg text-fig-purple font-bold">The Full Spread</h3>
+                <span class="font-body text-label-sm text-light-outline">All-day workshops &amp; board meetings</span>
+              </div>
+              <div class="text-right">
+                <span class="font-headline text-headline-md text-fig-purple font-bold tabular-nums">$28</span>
+                <span class="font-body text-label-sm text-light-outline block">/ person</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-body-md text-light-on-surface mb-3">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Morning filter urns &amp; afternoon iced coffee carafes</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Freshly baked morning bakery basket</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Artisan sourdough sandwich platters</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-accent text-body-lg shrink-0" aria-hidden="true">check_circle</span>
+                <span>Seasonal salad bowls &amp; cold-pressed juice jugs</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-light-outline-variant text-label-sm text-light-outline">
+            Min. 10 people
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Exactly one primary call to action: "Order catering" that opens an email -->
+      <div class="p-6 rounded-lg bg-light-surface-container-high border border-light-outline-variant text-center">
+        <h2 class="font-headline text-headline-md text-fig-purple mb-2 text-balance">Plan your catering order</h2>
+        <p class="font-body text-body-md text-light-on-surface mb-5 text-pretty">
+          Tell us your head count, delivery date, package preference, and any dietary requirements.
+        </p>
+        <a href="mailto:catering@figandfilter.com?subject=Catering%20Enquiry%20%E2%80%94%20Fig%20%26%20Filter&amp;body=Hi%20Mara%20and%20Dev%2C%0A%0AWe%20would%20like%20to%20enquire%20about%20catering%20for%20our%20team%3A%0A%0A-%20Preferred%20package%3A%20%5BThe%20Coffee%20Run%20%2F%20The%20Morning%20Tea%20%2F%20The%20Full%20Spread%5D%0A-%20Estimated%20guest%20count%3A%0A-%20Delivery%20date%20and%20time%3A%0A-%20Delivery%20address%3A%0A-%20Dietary%20notes%20(V%2C%20VG%2C%20GF)%3A%0A%0AThank%20you!" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center w-full px-6 py-4 rounded bg-fig-purple text-light-on-primary font-label text-label-lg border border-light-outline/40 shadow-sm transition-colors duration-state-change hover:bg-light-primary-container focus:outline-none focus:ring-2 focus:ring-accent">
+          <span class="material-symbols-outlined text-body-lg mr-2" aria-hidden="true">mail</span>
+          <span data-design-text-token="label-lg">Order catering</span>
+        </a>
+      </div>
+    </main>
+
+    <!-- Global Footer on every page: café name, opening hours, address (8 Chalk Lane), email, and an "Order catering" link -->
+    <footer class="bg-fig-purple text-light-on-primary border-t border-light-outline-variant px-6 py-8 mt-6">
+      <div class="flex flex-col gap-6">
+        <div>
+          <span class="font-headline text-headline-md text-light-on-primary block font-bold">Fig &amp; Filter</span>
+          <p class="font-body text-body-md text-light-on-primary/90 mt-1">Roasted here. Baked here. Poured for you.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 text-body-md">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Opening Hours</span>
+              <span class="text-light-on-primary/90 block">Tuesday to Sunday: 7:30am – 5:00pm</span>
+              <span class="text-light-on-primary/75 text-label-sm block">Monday: Closed</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">location_on</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Address</span>
+              <span class="text-light-on-primary/90 block">8 Chalk Lane, corner of Weaver Street</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-accent text-body-lg shrink-0 mt-0.5" aria-hidden="true">mail</span>
+            <div>
+              <span class="font-semibold block text-light-on-primary">Email</span>
+              <a href="mailto:hello@figandfilter.com" class="text-light-on-primary/90 hover:underline">hello@figandfilter.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-light-on-primary/20 flex items-center justify-between">
+          <a href="Catering.html" class="font-label text-label-lg text-accent underline decoration-accent underline-offset-4 hover:text-light-on-primary transition-colors">
+            Order catering →
+          </a>
+          <span class="font-body text-label-sm text-light-on-primary/75">Open 2 years</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    const icon = document.getElementById('menu-icon');
+    if (toggleBtn && nav && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = nav.classList.toggle('hidden');
+        const expanded = !isHidden;
+        toggleBtn.setAttribute('aria-expanded', String(expanded));
+        icon.textContent = expanded ? 'close' : 'menu';
+      });
+    }
+  </script>
+
+
+</body></html>
